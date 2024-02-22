@@ -10,9 +10,9 @@ class Employee {
       this.salary = salary;
   }
 }
-const collectEmployees = function(){
   // TODO: Get user input to create and return an array of employee objects
-    const numEmployees = parseInt(prompt("Enter the number of employees:"));
+  const collectEmployees = function(){  
+  const numEmployees = parseInt(prompt("Enter the number of employees:"));
     const employees = [];
 
     for (let i = 0; i < numEmployees; i++) {
