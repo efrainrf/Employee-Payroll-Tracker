@@ -34,18 +34,20 @@ class Employee {
 // Display the average salary
   // TODO: Calculate and display the average salary
   const displayAverageSalary = function(employeesArray) {
-    
+    // The for of loop is used to find the total salary of all the employees.
     let totalSalary = 0;
     for (const employee of employeesArray) {
         totalSalary += employee.salary;
     }
 
-    
+    // This obtains the number of employees the user has entered
     const numEmployees = employeesArray.length;
+    // Here the average salary is calculated by diving the total of all employees by the numeber of employees.
+    //It is stored in the averageSalary object that is used below.
     const averageSalary = totalSalary / numEmployees;
 
-    
-    console.log(`Average Salary is $${averageSalary.toFixed(2)}`);
+    // the average is logged in the console by calling averageSalary inside the string
+    console.log(`Average Salary is $${averageSalary}`);
 };
 
 
