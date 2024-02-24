@@ -3,6 +3,8 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 // defining employee data as variables: their first name, last name, and salary.
+// did research on what the class does and it along with the constructor method are used to create multiple
+// object declarations that I can call on in a later function
 class Employee {
   constructor(firstName, lastName, salary) {
       this.firstName= firstName;
@@ -11,15 +13,18 @@ class Employee {
   }
 }
   // TODO: Get user input to create and return an array of employee objects
+  // I am declaring the function and using parseInt to convert the data given by the user into a number/integer
   const collectEmployees = function(){  
   const numEmployees = parseInt(prompt("Enter the number of employees:"));
     const employees = [];
-
+// This for loop is collecting the names and salary of the specified amount of people the user entered in the previous
+//prompt.
     for (let i = 0; i < numEmployees; i++) {
         const firstName = prompt(`Enter first name for employee ${i + 1}:`);
         const lastName = prompt(`Enter last name for employee ${i + 1}:`);
-        const salary = parseFloat(prompt(`Enter salary for employee ${i + 1}:`));
-
+        const salary = parseInt(prompt(`Enter salary for employee ${i + 1}:`));
+//Below I am adding the data into the employee object using the push method. I am pushing the name(s) and salary
+//objects into said array
         employees.push(new Employee(firstName, lastName,salary));
     }
 
@@ -29,17 +34,17 @@ class Employee {
 // Display the average salary
   // TODO: Calculate and display the average salary
   const displayAverageSalary = function(employeesArray) {
-    // Calculate total salary
+    
     let totalSalary = 0;
     for (const employee of employeesArray) {
         totalSalary += employee.salary;
     }
 
-    // Compute average salary
+    
     const numEmployees = employeesArray.length;
     const averageSalary = totalSalary / numEmployees;
 
-    // Display the result
+    
     console.log(`Average Salary is $${averageSalary.toFixed(2)}`);
 };
 
