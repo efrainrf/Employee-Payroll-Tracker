@@ -2,6 +2,7 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
+// TODO: Get user input to create and return an array of employee objects
 // defining employee data as variables: their first name, last name, and salary.
 // did research on what the class does and it along with the constructor method are used to create multiple
 // object declarations that I can call on in a later function
@@ -12,7 +13,6 @@ class Employee {
       this.salary = salary;
   }
 }
-  // TODO: Get user input to create and return an array of employee objects
   // I am declaring the function and using parseInt to convert the data given by the user into a number/integer
   const collectEmployees = function(){  
   const numEmployees = parseInt(prompt("Enter the number of employees:"));
@@ -40,24 +40,27 @@ class Employee {
         totalSalary += employee.salary;
     }
 
-    // This obtains the number of employees the user has entered
+    // This obtains the number of employees the user has entered.
     const numEmployees = employeesArray.length;
     // Here the average salary is calculated by diving the total of all employees by the numeber of employees.
     //It is stored in the averageSalary object that is used below.
     const averageSalary = totalSalary / numEmployees;
 
-    // the average is logged in the console by calling averageSalary inside the string
+    // the average is logged in the console by calling averageSalary inside the string.
     console.log(`Average Salary is $${averageSalary}`);
 };
 
 
 
 // Select a random employee
+ // TODO: Select and display a random employee
 const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
-const randomIndex = Math.floor(Math.random() * employeesArray.length);
-const randomEmployee = employeesArray[randomIndex];
-console.log("Random Employee:");
+//Make randonIndex equal a random number from the employee array using the math methods.
+  const randomIndex = Math.floor(Math.random() * employeesArray.length);
+//Make randomEmployee equal the randomly selected employee given in the previous line.
+  const randomEmployee = employeesArray[randomIndex];
+console.log(`Random employee`);
+//Had to console log twice because I got "object object" for some reason when I used the variable in the string.
 console.log(randomEmployee);
 return randomEmployee;
 };
